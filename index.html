@@ -3,21 +3,25 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link rel="shortcut icon" type="image/webp" href="favicon.webp"/>
+		<link rel="shortcut icon" type="image/jpeg" href="favicon.jpg"/>
 		<title>TETRIS</title>
-		
-		<script type="text/javascript" src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
-		<script type="text/javascript" src="nes-embed.js"></script>
-		<script>window.onload = function(){nes_load_url("nes-canvas", "insert.nes");}</script>
-		<script> // So it can escape certain filters, like GoGuardian
+
+	<script>
         window.onbeforeunload = function() {
             return "Are you sure you want to reload?";
         };
     </script>
 	</head>
-	<body>
-		<div style="margin: auto; width: 49%;">
-			<canvas id="nes-canvas" width="256" height="240" style="width: 100%"/>
-		</div>
-	</body>
+    <body>
+        <div style="width:100%;height:100%;max-width:100%">
+            <div id="game"></div>
+        </div>
+        <script>
+            EJS_player = "#game";
+            EJS_core = "nes";
+            EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+            EJS_gameUrl = "insert.nes";
+        </script>
+        <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+    </body>
 </html>
